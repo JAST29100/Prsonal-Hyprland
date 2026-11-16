@@ -1,0 +1,101 @@
+
+/* Joseph's Waybar theme */
+/* Nord-inspired dark palette */
+
+@define-color base       #111820;
+@define-color surface    #1b2633;
+@define-color surface2   #263445;
+@define-color text       #d8dee9;
+@define-color muted      #8192a5;
+@define-color accent     #89b4fa;
+@define-color critical   #bf616a;
+
+* {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @base;
+    border: 1px solid @surface2;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+#workspaces {
+    padding: 0 3px;
+}
+
+#workspaces button {
+    color: @muted;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    padding: 0 9px;
+    margin: 4px 2px;
+    transition: all 150ms ease;
+}
+
+#workspaces button.active {
+    color: @base;
+    background: @accent;
+}
+
+#workspaces button:hover {
+    color: @text;
+    background: @surface2;
+}
+
+#window {
+    color: @muted;
+    padding: 0 10px;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#tray {
+    color: @text;
+    padding: 0 9px;
+}
+
+#clock {
+    color: @accent;
+    font-weight: 600;
+}
+
+#battery.warning {
+    color: @accent;
+}
+
+#battery.critical {
+    color: @critical;
+}
+
+#pulseaudio.muted {
+    color: @muted;
+}
+
+tooltip {
+    background: @base;
+    border: 1px solid @surface2;
+    border-radius: 8px;
+    color: @text;
+}
+
+tooltip label {
+    padding: 5px;
+}
+

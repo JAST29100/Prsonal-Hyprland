@@ -1,0 +1,96 @@
+
+{
+  "on-sigusr1": "hide",
+  "on-sigusr2": "show",
+
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "spacing": 8,
+
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+
+  "modules-left": [
+      "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+      "hyprland/window"
+  ],
+
+  "modules-right": [
+      "cpu",
+      "memory",
+      "pulseaudio",
+      "network",
+      "battery",
+      "clock",
+      "tray"
+  ],
+
+  "hyprland/workspaces": {
+      "format": "{name}",
+      "on-click": "activate",
+      "disable-scroll": true,
+      "all-outputs": true
+  },
+
+  "hyprland/window": {
+      "format": "{}",
+      "max-length": 45,
+      "separate-outputs": true
+  },
+
+  "cpu": {
+      "interval": 5,
+      "format": "CPU {usage}%",
+      "tooltip": true
+  },
+
+  "memory": {
+      "interval": 5,
+      "format": "RAM {percentage}%",
+      "tooltip": true
+  },
+
+  "pulseaudio": {
+      "format": "VOL {volume}%",
+      "format-muted": "VOL MUTED",
+      "scroll-step": 5,
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+
+  "network": {
+      "interval": 5,
+      "format-wifi": "WIFI {signalStrength}%",
+      "format-ethernet": "ETH",
+      "format-disconnected": "OFFLINE",
+      "tooltip-format": "{ifname}: {ipaddr}"
+  },
+
+  "battery": {
+      "interval": 30,
+      "states": {
+          "warning": 25,
+          "critical": 10
+      },
+      "format": "BAT {capacity}%",
+      "format-charging": "CHG {capacity}%",
+      "format-warning": "BAT {capacity}%",
+      "format-critical": "BAT {capacity}%",
+      "tooltip": true
+  },
+
+  "clock": {
+      "interval": 60,
+      "format": "{:%a %d %b  %H:%M}",
+      "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "tray": {
+      "icon-size": 16,
+      "spacing": 8
+  }
+}
